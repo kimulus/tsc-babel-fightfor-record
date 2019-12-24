@@ -1,0 +1,1 @@
+# tsc-babel-fightfor-record
