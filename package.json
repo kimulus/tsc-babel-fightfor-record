@@ -1,0 +1,32 @@
+{
+  "name": "babelts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:tsc": "(rm -r ./build/tsc || true) && tsc",
+    "build:babel": "(rm -r ./build/babel || true) &&  babel src --out-dir build/babel --extensions '.ts,.tsx' --ignore '**/*.test.ts'",
+    "test:tsc": "jest --config jest.tsc.config.js",
+    "test:babel": "jest",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
+    "build": "npm run build:tsc && npm run build:babel"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.24",
+    "immutable": "^4.0.0-rc.12"
+  }
+}
